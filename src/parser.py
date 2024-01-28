@@ -10,6 +10,10 @@ from transitions import Machine
 import ledgertoken as lt
 
 
+class LedgerAmountError(Exception):
+    pass
+
+
 @dataclass
 class LedgerPosts:
     account: str
@@ -42,10 +46,6 @@ class LedgerTransaction:
     def __repr__(self):
         filename = Path(self.file).name
         return f"<{self.date} {self.state} {self.payee} {filename} {self.line} {self.comments} {self.posts}>"
-
-
-class LedgerAmountError(Exception):
-    pass
 
 
 @dataclass

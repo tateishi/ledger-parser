@@ -1,5 +1,5 @@
 import sys
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from datetime import date, datetime
 from decimal import Decimal
 from enum import Enum
@@ -8,7 +8,7 @@ from pprint import pprint
 import parse_regex as pat
 
 
-class LedgerInvalidLineException(Exception):
+class LedgerInvalidLineError(Exception):
     pass
 
 
@@ -162,4 +162,4 @@ def tokenize(lines):
             )
             continue
 
-        raise LedgerInvalidLineException
+        raise LedgerInvalidLineError
