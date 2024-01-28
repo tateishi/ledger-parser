@@ -1,0 +1,15 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+regex = "*"
+transitions = "*"
+
+[dev-packages]
+
+[scripts]
+main="python src/main.py"
+parse="python src/parser.py"
+re_test="python src/parse.py"
